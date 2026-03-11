@@ -1,1 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMIIN FX Bootcamp</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:black;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav h2{
+color:#ff7a00;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+nav a:hover{
+color:#ff7a00;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://images.unsplash.com/photo-1642790551116-d0b2a1a4c1d8?auto=format&fit=crop&w=1500&q=80");
+background-size:cover;
+background-position:center;
+opacity:0.25;
+z-index:-1;
+}
+
+.hero h1{
+font-size:48px;
+color:#ff7a00;
+}
+
+.hero p{
+margin-top:10px;
+}
+
+.btn{
+margin-top:25px;
+padding:15px 35px;
+background:#ff7a00;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 10%;
+text-align:center;
+}
+
+.section-title{
+font-size:36px;
+margin-bottom:40px;
+color:#ff7a00;
+}
+
+/* CARDS */
+
+.features{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.card{
+background:#1b1b1b;
+padding:30px;
+width:250px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(255,122,0,0.3);
+}
+
+/* SEATS */
+
+.seats{
+font-size:28px;
+}
+
+/* FORM */
+
+.form-container{
+max-width:450px;
+margin:auto;
+background:#1b1b1b;
+padding:35px;
+border-radius:10px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+.register{
+background:#ff7a00;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:black;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+color:white;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>AMIIN FX</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#learn">Bootcamp</a></li>
+<li><a href="#register">Register</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+<div>
+
+<h1>AMIIN FX BOOTCAMP</h1>
+
+<p>Master Forex Trading From Beginner to Advanced</p>
+
+<a href="#register"><button class="btn">Register Now</button></a>
+
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About The Bootcamp</h2>
+
+<p>
+
+AMIIN FX Bootcamp is a practical Forex trading training where students learn
+real strategies, risk management and live market analysis.
+
+</p>
+
+</section>
+
+<!-- LEARN -->
+
+<section id="learn">
+
+<h2 class="section-title">What You Will Learn</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Forex Basics</h3>
+<p>Understand how Forex markets work.</p>
+</div>
+
+<div class="card">
+<h3>Technical Analysis</h3>
+<p>Support, resistance and chart patterns.</p>
+</div>
+
+<div class="card">
+<h3>Risk Management</h3>
+<p>Protect and grow your capital.</p>
+</div>
+
+<div class="card">
+<h3>Live Trading</h3>
+<p>Real market breakdown and trade setups.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SEATS -->
+
+<section>
+
+<h2 class="section-title">Bootcamp Seats</h2>
+
+<p class="seats"><span id="seatCount">100</span> Seats Remaining</p>
+
+</section>
+
+<!-- REGISTER -->
+
+<section id="register">
+
+<h2 class="section-title">Register</h2>
+
+<div class="form-container">
+
+<form onsubmit="registerStudent(event)">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="text" placeholder="Phone Number" required>
+
+<input type="text" placeholder="Payment Code">
+
+<input type="submit" value="Register Seat" class="register">
+
+</form>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>WhatsApp: +254700000000</p>
+
+<p>Email: amiinfx@email.com</p>
+
+</section>
+
+<footer>
+
+<p>AMIIN FX Bootcamp © 2026</p>
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/254700000000">💬</a>
+
+<script>
+
+let seats = 100;
+
+function registerStudent(e){
+
+e.preventDefault();
+
+if(seats>0){
+
+seats--;
+
+document.getElementById("seatCount").innerText = seats;
+
+alert("Registration Successful!");
+
+}else{
+
+alert("Bootcamp Full");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
